@@ -1,34 +1,43 @@
 import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
 
   const expense = [
     {
+      id:"e1",
       title:"Netflix",
       amount:199,
       date:new Date(2022, 2, 23)
     },
     {
+      id:"e2",
       title:"Piano",
       amount:1500,
       date:new Date(2021, 6, 16)
     },
     {
+      id:"e3",
       title:"Cube",
       amount:100,
       date:new Date(2021, 4, 13)
     },
     {
+      id:"e4",
       title:"Food",
       amount:700,
       date:new Date(2021, 11, 14)
     }
   ]
 
+  const saveNewExpenseHandler = (newExpense) =>{
+    console.log(newExpense)
+  }
+
   return (
     <div>
-      <h2>Expense Report!</h2>
+      <NewExpense onSaveNewExpense = { saveNewExpenseHandler } />
       <Expenses expense = {expense}  />
     </div>
   );
